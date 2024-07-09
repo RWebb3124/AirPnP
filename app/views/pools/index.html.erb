@@ -1,0 +1,9 @@
+<ul>
+  <%= @pools.each do |pool| %>
+    <li><%= pool.title %></li>
+    <li><%= pool.description %></li>
+    <li><%= pool.address %></li>
+    <li><%= pool.price %></li>
+    <li><%= pool.capacity %></li>
+  <% end %>
+</ul>

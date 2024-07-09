@@ -7,3 +7,30 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+require 'faker'
+
+User.destroy_all
+Pool.destroy_all
+
+20.times do
+  new_user = User.create!(
+    {
+      first_name: Faker::Name.first_name,
+      last_name: Faker::Name.last_name,
+      email: Faker::Internet.email,
+      password: "Password1234",
+      owner: false
+    }
+  )
+  new_pool = Pool.create(
+    {
+      title: Faker::Address.street_name,
+      description: Faker::Lorem.paragraph(sentence_count: 3),
+      address: Faker::Address.full_address,
+      price: rand(1.00..9_999.99).round(2),
+      capacity: rand(1..20)
+    }
+  )
+  new_pool.user = new_user
+  new_pool.save
+end
