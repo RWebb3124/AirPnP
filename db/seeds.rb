@@ -27,7 +27,7 @@ Pool.destroy_all
       title: Faker::Address.street_name,
       description: Faker::Lorem.paragraph(sentence_count: 3),
       address: Faker::Address.full_address,
-      price: rand(1.00..9_999.99).round(2),
+      price: rand(1.00..1_999.99).round(2),
       capacity: rand(1..20)
     }
   )
