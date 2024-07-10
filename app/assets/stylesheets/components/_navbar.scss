@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #d7eef4;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -11,19 +11,21 @@
   width: 60px;
 }
 
-.navbar-lewagon .gradient-div {
-  background-color: rgb(38, 156, 156);
-}
-
 .searchdiv {
   width: 240px;
   height: 40px;
   border: 1px solid #afaeae;
   border-radius: 25px;
   background-color: whitesmoke;
-  color: rgb(186, 210, 216);
+  color: lightgray;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
+}
+
+.link-color {
+  color: rgb(162, 162, 162);
+  text-decoration: none;
 }
