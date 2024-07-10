@@ -11,7 +11,7 @@ class PoolsController < ApplicationController
 
   def create
     @pool = Pool.new(pool_params)
-    @pool.user = @user
+    @pool.user = current_user
     if @pool.save
       redirect_to pools_path
     else
@@ -22,6 +22,6 @@ class PoolsController < ApplicationController
   private
 
   def pool_params
-    params.require(:pool).permit(:address, :user_id, :title, :description, :price, :capacity)
+    params.require(:pool).permit(:address, :user_id, :title, :description, :price, :capacity, :photo)
   end
 end
