@@ -4,6 +4,7 @@
   box-shadow: 0 0 10px rgba(154, 154, 154, 0.2);
   border-radius: 10px;
   margin: 10px;
+  color: black;
 }
 
 .card-pool > img {
@@ -24,7 +25,6 @@
   margin: 0;
 }
 
-
 .card-pool .card-pool-infos {
   padding: 16px;
   display: flex;
@@ -33,9 +33,7 @@
   position: relative;
 }
 
-.card-pool-infos .card-pool-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
+.card-pool a {
+  color: inherit !important;
+  text-decoration: none !important;
 }
