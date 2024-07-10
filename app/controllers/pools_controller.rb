@@ -1,9 +1,13 @@
 class PoolsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :edit, :update]
+  skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_pool, only: [:edit, :update, :destroy]
 
   def index
     @pools = Pool.all
+  end
+
+  def show
+    @pool = Pool.find(params[:id])
   end
 
   def new
@@ -11,8 +15,7 @@ class PoolsController < ApplicationController
   end
 
   def mypools
-    @pools = Pool.all
-    @mypools = @pools.where(user_id: current_user)
+    @pools = Pool.where(user_id: current_user)
   end
 
   def create
