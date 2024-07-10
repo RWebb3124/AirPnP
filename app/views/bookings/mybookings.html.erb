@@ -1,0 +1,17 @@
+<div class="row g-0">
+  <% @mybookings.each do |booking| %>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card-pool">
+          <img src="https://housing.com/news/wp-content/uploads/2023/03/10-Vastu-based-swimming-pool-ideas-for-home-construction-09.png" />
+          <div class="card-pool-infos">
+            <div>
+              <h2><%= booking.pool_id %></h2>
+              <p><%= booking.start_time %></p>
+              <p><%= booking.end_time %></p>
+            </div>
+            <h2 class="card-pool-pricing">Price: <%= booking.pool_id %></h2>
+          </div>
+        </div>
+    </div>
+  <% end %>
+</div>
