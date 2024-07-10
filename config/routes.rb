@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  resources :pools, only: %i[index new create edit update destroy]
+  resources :pools
   get '/pools/:id/bookings/new', to: 'bookings#new', as: 'new_pool_booking'
   post '/pools/:id/bookings', to: 'bookings#create', as: 'pool_bookings'
   get '/mypools', to: 'pools#mypools', as: 'my_pools'
