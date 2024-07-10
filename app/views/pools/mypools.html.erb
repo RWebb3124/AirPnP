@@ -1,16 +1,3 @@
-<div class="row">
-  <% @mypools.each do |pool| %>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-      <div class="card-trip m-3">
-        <img src="https://housing.com/news/wp-content/uploads/2023/03/10-Vastu-based-swimming-pool-ideas-for-home-construction-09.png" />
-        <div class="card-trip-infos">
-          <div>
-            <h2><%= pool.title %></h2>
-            <p><%= pool.description %></p>
-          </div>
-          <h2 class="card-trip-pricing"><%= pool.price %></h2>
-        </div>
-      </div>
-    </div>
-  <% end %>
+<div class="card ml-10">
+  <%= render 'shared/pool_card' %>
 </div>
