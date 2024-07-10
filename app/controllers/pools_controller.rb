@@ -1,6 +1,6 @@
 class PoolsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
-  before_action :set_pool, only: [:edit, :update, :destroy]
+  before_action :set_pool, only: %i[edit update destroy]
 
   def index
     @pools = Pool.all
