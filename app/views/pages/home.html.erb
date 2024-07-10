@@ -1,5 +1,24 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-<%= link_to "Browse all pools", pools_path, class: "btn btn-primary" %>
-<%= link_to "List a pool", new_pool_path, class: "btn btn-success" %>
+<div class="container">
+  <div class="card-container">
+    <div class="button-container">
+      <%= link_to "Browse all pools", pools_path, class: "btn btn-primary" %>
+      <%= link_to "List a pool", new_pool_path, class: "btn btn-success" %>
+    </div>
+    <div class="row">
+      <% @pools.take(8).each do |pool| %>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card-trip m-3">
+            <img src="https://housing.com/news/wp-content/uploads/2023/03/10-Vastu-based-swimming-pool-ideas-for-home-construction-09.png" />
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= pool.title %></h2>
+                <p><%= pool.description %></p>
+              </div>
+              <h2 class="card-trip-pricing"><%= pool.price %></h2>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
