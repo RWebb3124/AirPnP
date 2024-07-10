@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
 
   def mybookings
     @bookings = Booking.all
-    @mybookings = @bookings.select
+    @mybookings = @bookings.where(user_id: current_user)
   end
 
   private

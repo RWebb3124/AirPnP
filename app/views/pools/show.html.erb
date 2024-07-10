@@ -5,11 +5,11 @@
     <h4><%= @pool.address %></h3>
     <%#Insert map into this gap%>
     <p><%= @pool.description %></p>
-    <h4><%= @pool.capacity %></h4>
-    <h3><%= @pool.price %></h3>
+    <h4>Capacity: <%= @pool.capacity %></h4>
+    <h3>Price per hour: <%= @pool.price %></h3>
     <div class="d-grid gap-2 d-md-block">
       <%= link_to "Book", new_pool_booking_path, class: "btn btn-success" %>
       <%= link_to "Browse all pools", pools_path, class: "btn btn-primary" %>
-      </div>
+    </div>
   </div>
 </div>
