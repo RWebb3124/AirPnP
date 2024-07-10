@@ -5,11 +5,13 @@
           <img src="https://housing.com/news/wp-content/uploads/2023/03/10-Vastu-based-swimming-pool-ideas-for-home-construction-09.png" />
           <div class="card-pool-infos">
             <div>
-              <h2><%= booking.pool_id %></h2>
-              <p><%= booking.start_time %></p>
-              <p><%= booking.end_time %></p>
+              <h2><%= booking.pool.title %></h2>
+              <p>Start time:</p>
+              <p><%= booking.start_time.strftime("%B %d, %Y %I:%M %p") %></p>
+              <p>End time:</p>
+              <p><%= booking.end_time.strftime("%B %d, %Y %I:%M %p") %></p>
             </div>
-            <h2 class="card-pool-pricing">Price: <%= booking.pool_id %></h2>
+            <h2 class="card-pool-pricing">Price: <%= booking.pool.price %></h2>
           </div>
         </div>
     </div>
