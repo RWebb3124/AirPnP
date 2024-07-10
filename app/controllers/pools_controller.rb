@@ -13,6 +13,11 @@ class PoolsController < ApplicationController
     @pool = Pool.new
   end
 
+  def mypools
+    @pools = Pool.all
+    @mypools = @pools.where(user_id: current_user)
+  end
+
   def create
     @pool = Pool.new(pool_params)
     @pool.user = current_user
