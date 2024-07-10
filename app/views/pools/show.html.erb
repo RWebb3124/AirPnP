@@ -1,13 +1,15 @@
 <div class= "container">
   <div class= "row">
   <h1><%= @pool.title %></h1>
-    <img src="https://housing.com/news/wp-content/uploads/2023/03/10-Vastu-based-swimming-pool-ideas-for-home-construction-09.png" />
+    <img src="https://housing.com/news/wp-content/uploads/2023/03/10-Vastu-based-swimming-pool-ideas-for-home-construction-09.png" class="img-fluid" />
     <h4><%= @pool.address %></h3>
     <%#Insert map into this gap%>
     <p><%= @pool.description %></p>
     <h4>Capacity: <%= @pool.capacity %></h4>
     <h3>Price per hour: <%= @pool.price %></h3>
-    <%= link_to "Book", new_pool_booking_path, class: "btn btn-success" %>
-    <%= link_to "Browse all pools", pools_path, class: "btn btn-primary" %>
+    <div class="d-grid gap-2 d-md-block">
+      <%= link_to "Book", new_pool_booking_path, class: "btn btn-success" %>
+      <%= link_to "Browse all pools", pools_path, class: "btn btn-primary" %>
+    </div>
   </div>
 </div>
