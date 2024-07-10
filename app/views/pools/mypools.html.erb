@@ -14,8 +14,7 @@
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton<%= pool.id %>">
                 <li><a class="dropdown-item" href="<%= edit_pool_path(pool) %>">Edit</a></li>
-                <li><%= link_to "Delete", pool_path(pool), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "dropdown-item" %>
-               </li>
+                <li><%= link_to "Delete", pool_path(pool), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "dropdown-item" %></li>
             </ul>
           </div>
        </div>
