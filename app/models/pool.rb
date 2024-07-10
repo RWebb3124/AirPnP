@@ -2,6 +2,7 @@ class Pool < ApplicationRecord
   belongs_to :user
   has_many :bookings
   has_many :reviews, through: :bookings
+  has_one_attached :photo
 
   validates :address, presence: true, uniqueness: true, length: { minimum: 8 }
   validates :title, presence: true
