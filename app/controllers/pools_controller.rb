@@ -5,6 +5,10 @@ class PoolsController < ApplicationController
     @pools = Pool.all
   end
 
+  def show
+    @pools = Pool.find(params[:id])
+  end
+
   def new
     @pool = Pool.new
   end

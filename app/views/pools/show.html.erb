@@ -1,0 +1,12 @@
+<div class= "container">
+  <div class= "row">
+  <h1><%= @pool.title %></h1>
+    <img src="https://housing.com/news/wp-content/uploads/2023/03/10-Vastu-based-swimming-pool-ideas-for-home-construction-09.png" />
+    <h4><%= @pool.address %></h3>
+    <%#Insert map into this gap%>
+    <p><%= @pool.description %></p>
+    <h4><%= @pool.capacity %></h4>
+    <h3><%= @pool.price %></h3>
+    <%= link_to "Browse all pools", pools_path, class: "btn btn-primary" %>
+  </div>
+</div>
