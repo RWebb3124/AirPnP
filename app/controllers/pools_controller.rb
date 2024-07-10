@@ -6,7 +6,7 @@ class PoolsController < ApplicationController
   end
 
   def show
-    @pools = Pool.find(params[:id])
+    @pool = Pool.find(params[:id])
   end
 
   def new
