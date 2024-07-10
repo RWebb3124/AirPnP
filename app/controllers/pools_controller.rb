@@ -15,7 +15,7 @@ class PoolsController < ApplicationController
   end
 
   def mypools
-    @pools = Pool.where(user_id: current_user)
+    @mypools = Pool.where(user_id: current_user)
   end
 
   def create
