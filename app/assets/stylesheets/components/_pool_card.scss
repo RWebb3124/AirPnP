@@ -1,4 +1,4 @@
-.card-trip {
+.card-pool {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 10px rgba(154, 154, 154, 0.2);
@@ -6,26 +6,26 @@
   margin: 10px;
 }
 
-.card-trip > img {
+.card-pool > img {
   height: 200px;
   width: 100%;
   object-fit: cover;
 }
 
-.card-trip h2 {
+.card-pool h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-trip p {
+.card-pool p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
 }
 
 
-.card-trip .card-trip-infos {
+.card-pool .card-pool-infos {
   padding: 16px;
   display: flex;
   justify-content: space-between;
@@ -33,7 +33,7 @@
   position: relative;
 }
 
-.card-trip-infos .card-trip-user {
+.card-pool-infos .card-pool-user {
   position: absolute;
   right: 16px;
   top: -20px;
