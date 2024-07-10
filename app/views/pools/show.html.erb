@@ -7,6 +7,7 @@
     <p><%= @pool.description %></p>
     <h4><%= @pool.capacity %></h4>
     <h3><%= @pool.price %></h3>
+    <%= link_to "Book", new_pool_booking_path, class: "btn btn-success" %>
     <%= link_to "Browse all pools", pools_path, class: "btn btn-primary" %>
   </div>
 </div>
