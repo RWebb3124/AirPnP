@@ -9,6 +9,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  resources :pools, only: %i[index new create]
+  resources :pools, only: %i[index new create edit update destroy]
   get '/mypools', to: 'pools#mypools', as: 'my_pools'
 end
