@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
     @booking.pool = @pool
     @booking.user = current_user
     if @booking.save
-      redirect_to pool_path(@pool)
+      redirect_to my_bookings_path
     else
       render :new
     end
