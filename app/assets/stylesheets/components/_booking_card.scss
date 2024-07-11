@@ -1,44 +1,10 @@
-// Graphical variables
-@import "config/fonts";
-@import "config/colors";
-@import "config/bootstrap_variables";
-
-// External libraries
-@import "bootstrap";
-@import "font-awesome";
-
-// Your CSS partials
-@import "components/index";
-@import "pages/index";
-
-a {
-  text-decoration: none !important;
-}
-
-.footer-fix {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.content {
-  flex: 1;
-}
-
-.capacity-icon {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 45px;
-}
-
 .card-booking {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 10px rgba(154, 154, 154, 0.2);
   border-radius: 10px;
   margin: 10px;
-  height: 450px;
+  height: 350px;
   color: black;
   display: flex;
   flex-direction: column;
@@ -82,6 +48,6 @@ a {
 }
 
 .card-booking a {
-  color: white !important;
+  color: inherit !important;
   text-decoration: none !important;
 }
