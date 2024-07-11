@@ -12,7 +12,6 @@ class PoolsController < ApplicationController
 
   def show
     @pool = Pool.find(params[:id])
-    # The `geocoded` scope filters only flats with coordinates
     @marker = [lat: @pool.latitude, lng: @pool.longitude]
   end
 
