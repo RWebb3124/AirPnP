@@ -19,7 +19,7 @@
             <div><p>End time:</p>
             <p><%= booking.end_time.strftime("%B %d, %Y %I:%M %p") %></p></div>
           </div>
-          <div class="review-price">
+          <div class="review-price border-top">
             <% review = Review.find_by(booking_id: booking.id) %>
             <% if review.present? %>
               <div class="p-2"><h2> Your review of <%= booking.pool.title %> </h2>
@@ -32,7 +32,7 @@
                 <p> <em> You can write a review after the booking ends </em> </p>
               <% end %>
             <% end %>
-            <h2 class="card-pool-pricing p-3">Cost: £<%= booking.pool.price %></h2>
+            <h2 class="card-pool-pricing p-3">Cost: £<%= ((booking.pool.price / 60) * ((booking.end_time - booking.start_time) / 60)).round(2) %></h2>
           </div>
         </div>
       </div>

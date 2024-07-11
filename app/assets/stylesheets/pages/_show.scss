@@ -20,6 +20,12 @@
 
 }
 
+.show-container #map {
+  display: flex;
+  border-radius: 20px;
+  margin-left: 60px;
+}
+
 .show-container .container-text {
   display: flex;
   width: 1000px;
