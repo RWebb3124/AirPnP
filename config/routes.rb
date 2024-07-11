@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   post '/pools/:id/bookings', to: 'bookings#create', as: 'pool_bookings'
   get '/mypools', to: 'pools#mypools', as: 'my_pools'
   get '/mybookings', to: 'bookings#mybookings', as: 'my_bookings'
+  patch '/bookings/:id/update_status', to: 'bookings#update_status', as: 'update_booking_status'
 end
