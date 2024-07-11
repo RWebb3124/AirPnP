@@ -9,4 +9,8 @@ class Pool < ApplicationRecord
   validates :description, presence: true, length: { minimum: 16 }
   validates :capacity, length: { in: 1..50 }, presence: true
   validates :price, presence: true # numericality: true, format: { with: /A\d{1,4}(\.\d{0,2})?z/ }
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
 end
