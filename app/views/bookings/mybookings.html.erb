@@ -22,9 +22,9 @@
           <div class="review-price">
             <% review = Review.find_by(booking_id: booking.id) %>
             <% if review.present? %>
-              <h2> Your review of <%= review.title %> </h2>
-              <p> Rating: <%= review.rating %> </p>
-              <p> <%= review.content %> </p>
+              <div class="p-2"><h2> Your review of <%= review.booking.pool.title %> </h2>
+              <p> <%= review.title %> </p>
+              <p> Rating: <%= review.rating %> </p></div>
             <% else %>
               <% if booking.end_time < Time.current %>
                 <%= link_to "Write a Review", new_booking_review_path(booking), class: "btn btn-primary" %>
@@ -32,7 +32,7 @@
                 <p> <em> You can write a review after the booking ends <em> </p>
               <% end %>
             <% end %>
-            <h2 class="card-pool-pricing p-2">Cost: £<%= booking.pool.price %></h2>
+            <h2 class="card-pool-pricing p-3">Cost: £<%= booking.pool.price %></h2>
           </div>
         </div>
       </div>
