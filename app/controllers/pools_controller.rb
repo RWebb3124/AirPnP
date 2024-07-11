@@ -4,6 +4,10 @@ class PoolsController < ApplicationController
 
   def index
     @pools = Pool.all
+    if params[:location].present? || params[:capacity].present?
+      @pools = @pools.search_by_address(params[:location]) if params[:location].present?
+      @pools = @pools.search_by_capacity(params[:capacity]) if params[:capacity].present?
+    end
   end
 
   def show
