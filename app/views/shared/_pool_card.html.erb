@@ -5,11 +5,14 @@
         <div class="card-pool">
           <img src="https://housing.com/news/wp-content/uploads/2023/03/10-Vastu-based-swimming-pool-ideas-for-home-construction-09.png" />
           <div class="card-pool-infos">
-            <div>
+            <div class="title-description">
               <h2><%= pool.title %></h2>
               <p><%= pool.description %></p>
             </div>
-            <h2 class="card-pool-pricing">£<%= pool.price %></h2>
+            <div class="price-capacity">
+              <h2 class="card-pool-capacity"><%= pool.capacity %></h2>
+              <h2 class="card-pool-pricing">£<%= pool.price %></h2>
+            </div>
           </div>
         </div>
       <% end %>
