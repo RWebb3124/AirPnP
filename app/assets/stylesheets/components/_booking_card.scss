@@ -1,0 +1,53 @@
+.card-booking {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 10px rgba(154, 154, 154, 0.2);
+  border-radius: 10px;
+  margin: 10px;
+  height: 350px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-booking > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-booking-infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  padding: 16px;
+}
+
+.title-description {
+  flex-grow: 1;
+}
+
+.card-booking h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-booking p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.price-capacity {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: auto;
+}
+
+.card-booking a {
+  color: inherit !important;
+  text-decoration: none !important;
+}

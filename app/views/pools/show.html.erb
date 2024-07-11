@@ -10,12 +10,12 @@
         <p><%= @pool.description %></p>
          <%#Insert map into this gap%>
          <p><strong><%= @pool.address %></strong></p>
-        <h5><strong>Capacity:</strong> <%= @pool.capacity %> people</h5>
-        <h2>Price per hour: €<%= @pool.price %></h3>
+          <h5><strong>Capacity:</strong> <%= @pool.capacity %> people</h5>
+          <h2>Price per hour: €<%= @pool.price %></h3>
         </div>
-        </div>
-        <div class= "container-btn">
-          <div class="col">
+      </div>
+      <div class= "container-btn">
+        <div class="col">
           <div class="d-grid gap-2 d-md-block">
             <%= link_to "Book pool", new_pool_booking_path, class: "btn btn-success" %>
             <%= link_to "Back to search", pools_path, class: "btn btn-primary" %>
@@ -25,3 +25,18 @@
       </div>
     </div>
   </div>
+</div>
+<ul>
+  <% if @pool.reviews.any? %>
+    <h2> All reviews for <%= @pool.title %> </h2>
+    <% @pool.reviews.each do |review| %>
+      <li>
+        <h3><%= review.title %></h3>
+        <p>Rating: <%= review.rating %></p>
+        <p><%= review.content %></p>
+      </li>
+    <% end %>
+  <% else %>
+    <p>No reviews yet for this pool. Be the first to leave one!</p>
+  <% end %>
+</ul>
