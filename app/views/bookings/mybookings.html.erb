@@ -14,8 +14,25 @@
             <p><%= booking.start_time.strftime("%B %d, %Y %I:%M %p") %></p>
             <p>End time:</p>
             <p><%= booking.end_time.strftime("%B %d, %Y %I:%M %p") %></p>
+            <h2 class="card-pool-pricing">Price: £<%= booking.pool.price %></h2>
           </div>
-          <h2 class="card-pool-pricing">Price: £<%= booking.pool.price %></h2>
+          <div>
+            <%= link_to "View pool", booking.pool, class: "btn btn-primary" %>
+          </div>
+          <div>
+            <% review = Review.find_by(booking_id: booking.id) %>
+            <% if review.present? %>
+              <h2> Your review of <%= review.title %> </h2>
+              <p> Rating: <%= review.rating %> </p>
+              <p> <%= review.content %> </p>
+            <% else %>
+              <% if booking.end_time < Time.current %>
+                <%= link_to "Write a Review", new_booking_review_path(booking), class: "btn btn-primary" %>
+              <% else %>
+                <p> <em> You can write a review after the booking ends <em> </p>
+              <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>

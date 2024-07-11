@@ -9,9 +9,14 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  resources :pools
+  resources :pools do
+  end
   get '/pools/:id/bookings/new', to: 'bookings#new', as: 'new_pool_booking'
   post '/pools/:id/bookings', to: 'bookings#create', as: 'pool_bookings'
   get '/mypools', to: 'pools#mypools', as: 'my_pools'
   get '/mybookings', to: 'bookings#mybookings', as: 'my_bookings'
+
+  resources :bookings do
+    resources :reviews, only: [:new, :create]
+  end
 end
