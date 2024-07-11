@@ -29,7 +29,7 @@
               <% if booking.end_time < Time.current %>
                 <%= link_to "Write a Review", new_booking_review_path(booking), class: "btn btn-primary" %>
               <% else %>
-                <p> <em> You can write a review after the booking ends </em> </p>
+                <p><em> You can write a review after the booking ends </em></p>
               <% end %>
             <% end %>
             <h2 class="card-pool-pricing p-3">Cost: £<%= ((booking.pool.price / 60) * ((booking.end_time - booking.start_time) / 60)).round(2) %></h2>
