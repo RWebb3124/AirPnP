@@ -4,13 +4,28 @@
   box-shadow: 0 0 10px rgba(154, 154, 154, 0.2);
   border-radius: 10px;
   margin: 10px;
+  height: 350px;
   color: black;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-pool > img {
   height: 200px;
   width: 100%;
   object-fit: cover;
+}
+
+.card-pool-infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  padding: 16px;
+}
+
+.title-description {
+  flex-grow: 1;
 }
 
 .card-pool h2 {
@@ -25,12 +40,11 @@
   margin: 0;
 }
 
-.card-pool .card-pool-infos {
-  padding: 16px;
+.price-capacity {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  position: relative;
+  margin-top: auto;
 }
 
 .card-pool a {

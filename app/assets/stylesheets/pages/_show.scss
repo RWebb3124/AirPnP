@@ -1,0 +1,43 @@
+.show-container {
+  display: flex;
+
+  h1 {
+    font-weight: bold;
+    font-size: 50px;
+  }
+}
+
+.show-container img {
+  display: flex;
+  border-radius: 30px;
+  width: 600px;
+  max-height: 100%;
+
+}
+.show-container .container-img {
+  display: flex;
+  justify-content: left;
+
+}
+
+.show-container .container-text {
+  display: flex;
+  width: 1000px;
+  align-items: left;
+  padding-top: 10px;
+
+  h2 {
+    font-weight: bold;
+    padding-top: 20px;
+
+  }
+
+
+}
+
+.show-container .container-btn {
+  display: flex;
+  width: 1000px;
+  align-items: left;
+
+}
