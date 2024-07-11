@@ -1,10 +1,8 @@
 .card-booking {
-  overflow: hidden;
   background: white;
   box-shadow: 0 0 10px rgba(154, 154, 154, 0.2);
   border-radius: 10px;
   margin: 10px;
-  height: 350px;
   color: black;
   display: flex;
   flex-direction: column;
@@ -48,6 +46,12 @@
 }
 
 .card-booking a {
-  color: inherit !important;
+  color: black;
   text-decoration: none !important;
+}
+
+.review-price, .author-endtime, .view-starttime {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
