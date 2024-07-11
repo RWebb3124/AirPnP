@@ -17,6 +17,7 @@ class PoolsController < ApplicationController
   def mypools
     @mypools = Pool.where(user_id: current_user)
     @bookingrequests = Booking.includes(:pool).where(user_id: current_user, status: 'pending')
+    @allbookings = Booking.includes(:pool).where(user_id: current_user, status: 'accepted')
   end
 
   def create
@@ -47,7 +48,7 @@ class PoolsController < ApplicationController
     redirect_to my_pools_path, notice: 'Pool was successfully destroyed.'
   end
 
- private
+  private
 
   def set_pool
     @pool = Pool.find(params[:id])

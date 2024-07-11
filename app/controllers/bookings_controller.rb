@@ -22,9 +22,8 @@ class BookingsController < ApplicationController
   end
 
   def update_status
-    puts "its working"
     @booking = Booking.find(params[:id])
-    @booking.update(booking_params)
+    @booking.update(status: params[:status])
     redirect_to my_pools_path
   end
 

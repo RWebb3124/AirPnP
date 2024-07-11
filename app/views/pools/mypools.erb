@@ -9,9 +9,17 @@
     <% if @bookingrequests.empty? %>
        <em class="text-muted">You don't have any pending booking requests!</em>
     <% end %>
-    <%= render "shared/booking_card" %>
+    <%= render "shared/booking_card", bookings: @bookingrequests %>
   </div>
 
+    <%# all bookings section %>
+  <div class="row g-0 mb-5">
+    <h2>All bookings</h2>
+    <% if @allbookings.empty? %>
+       <em class="text-muted">You don't have any accepted bookings!</em>
+    <% end %>
+    <%= render "shared/booking_card", bookings: @allbookings %>
+  </div>
 
   <%# my pools section %>
   <div class="row g-0">
