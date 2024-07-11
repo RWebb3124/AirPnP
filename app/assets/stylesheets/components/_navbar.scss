@@ -11,21 +11,14 @@
   width: 60px;
 }
 
-.searchdiv {
-  width: 240px;
-  height: 40px;
-  border: 1px solid #afaeae;
-  border-radius: 25px;
-  background-color: whitesmoke;
-  color: lightgray;
-  text-align: center;
+.search_bar_container {
   display: flex;
-  align-items: center;
   justify-content: center;
-  text-decoration: none;
+  align-items: center;
 }
 
 .link-color {
   color: rgb(162, 162, 162);
   text-decoration: none;
 }
+

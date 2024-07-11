@@ -6,9 +6,28 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="searchdiv">
-      <%= link_to raw("Where&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;When&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Guests"), pools_path, class: 'link-color' %>
+
+    <div class="col-sm-20 my-3 ">
+      <%= form_with url: pools_path, method: :get, class: "d-flex flex-row flex-nowrap align-items-center" do %>
+        <%= text_field_tag :location,
+              params[:location],
+              class: "form-control",
+              placeholder: "Location..",
+              style: "width: 250px; border-radius: 10px; height: 40px; margin: 5px"
+          %>
+        <%= text_field_tag :capacity,
+              params[:capacity],
+              class: "form-control form-control-sm",
+              placeholder: "Capacity",
+              style: "width: 75px; border-radius: 10px; height: 40px;"
+          %>
+        <button name="button" type="submit" class="btn btn-flat">
+          <i class="fas fa-search"></i>
+        </button>
+      <% end %>
     </div>
+
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
