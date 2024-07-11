@@ -85,3 +85,14 @@ a {
   color: white !important;
   text-decoration: none !important;
 }
+
+.review-price, .author-endtime, .view-starttime {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-pool-infos div {
+  padding-left: 16px;
+  padding-right: 16px;
+}
