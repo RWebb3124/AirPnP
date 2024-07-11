@@ -1,4 +1,4 @@
-.container {
+.show-container {
   display: flex;
 
   h1 {
@@ -7,20 +7,20 @@
   }
 }
 
-img {
+.show-container img {
   display: flex;
   border-radius: 30px;
   width: 600px;
   max-height: 100%;
 
 }
-.container-img {
+.show-container .container-img {
   display: flex;
   justify-content: left;
 
 }
 
-.container-text {
+.show-container .container-text {
   display: flex;
   width: 1000px;
   align-items: left;
@@ -35,7 +35,7 @@ img {
 
 }
 
-.container-btn {
+.show-container .container-btn {
   display: flex;
   width: 1000px;
   align-items: left;
