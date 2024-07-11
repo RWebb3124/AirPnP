@@ -13,3 +13,18 @@
     </div>
   </div>
 </div>
+
+<ul>
+  <% if @pool.reviews.any? %>
+    <h2> All reviews for <%= @pool.title %> </h2>
+    <% @pool.reviews.each do |review| %>
+      <li>
+        <h3><%= review.title %></h3>
+        <p>Rating: <%= review.rating %></p>
+        <p><%= review.content %></p>
+      </li>
+    <% end %>
+  <% else %>
+    <p>No reviews yet for this pool. Be the first to leave one!</p>
+  <% end %>
+</ul>
