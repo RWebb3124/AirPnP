@@ -16,6 +16,7 @@ class PoolsController < ApplicationController
 
   def mypools
     @mypools = Pool.where(user_id: current_user)
+    @bookingrequests = Booking.includes(:pool).where(user_id: current_user, status: 'pending')
   end
 
   def create
