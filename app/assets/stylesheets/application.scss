@@ -24,3 +24,10 @@ a {
 .content {
   flex: 1;
 }
+
+.capacity-icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 45px;
+}
