@@ -4,21 +4,39 @@
       <span class="mb-2 d-block"><small><em class="text-muted"><%= "You haven't created any bookings!" if @mybookings.empty? %></em></small></span>
     </div>
   <% @mybookings.each do |booking| %>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-      <div class="card-pool">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+      <div class="card-booking">
         <img src="https://housing.com/news/wp-content/uploads/2023/03/10-Vastu-based-swimming-pool-ideas-for-home-construction-09.png" />
         <div class="card-pool-infos">
-          <div>
-            <h2><%= booking.pool.title %></h2>
-            <p>Start time:</p>
-            <p><%= booking.start_time.strftime("%B %d, %Y %I:%M %p") %></p>
-            <p>End time:</p>
-            <p><%= booking.end_time.strftime("%B %d, %Y %I:%M %p") %></p>
+          <div class="bg-light p-3"><h2><%= booking.pool.title %></h2></div>
+          <div class="view-starttime">
+            <p>Owned by: <%= booking.pool.user.first_name %> <%= booking.pool.user.last_name %></p>
+            <div><p>Start time:</p>
+            <p><%= booking.start_time.strftime("%B %d, %Y %I:%M %p") %></p></div>
           </div>
-          <h2 class="card-pool-pricing">Price: £<%= booking.pool.price %></h2>
+          <div class="author-endtime">
+            <%= link_to "View pool", booking.pool, class: "btn btn-primary" %>
+            <div><p>End time:</p>
+            <p><%= booking.end_time.strftime("%B %d, %Y %I:%M %p") %></p></div>
+          </div>
+          <div class="review-price">
+            <% review = Review.find_by(booking_id: booking.id) %>
+            <% if review.present? %>
+              <div class="p-2"><h2> Your review of <%= booking.pool.title %> </h2>
+              <p> <%= review.title %> </p>
+              <p> Rating: <%= review.rating %> </p></div>
+            <% else %>
+              <% if booking.end_time < Time.current %>
+                <%= link_to "Write a Review", new_booking_review_path(booking), class: "btn btn-primary" %>
+              <% else %>
+                <p> <em> You can write a review after the booking ends </em> </p>
+              <% end %>
+            <% end %>
+            <h2 class="card-pool-pricing p-3">Cost: £<%= booking.pool.price %></h2>
+          </div>
         </div>
       </div>
     </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
 </div>

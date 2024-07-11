@@ -1,0 +1,17 @@
+  <% @bookingrequests.each do |booking| %>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card-pool">
+        <img src="https://housing.com/news/wp-content/uploads/2023/03/10-Vastu-based-swimming-pool-ideas-for-home-construction-09.png" />
+        <div class="card-pool-infos">
+          <div>
+            <h2><%= booking.user.first_name %><%= booking.user.last_name %></h2>
+            <p>Booked for: <%= booking.pool.title %> </p>
+            <p>Start time: <%= booking.start_time.strftime("%B %d, %Y %I:%M %p") %></p>
+            <p>End time: <%= booking.end_time.strftime("%B %d, %Y %I:%M %p") %></p>
+          </div>
+          <h2 class="card-pool-pricing">Price: £<%= booking.pool.price %></h2>
+          <%= link_to "Accept", update_booking_status_path(booking), class: "btn btn-success", data: {turbo_method: :patch} %>
+        </div>
+      </div>
+    </div>
+  <% end %>
