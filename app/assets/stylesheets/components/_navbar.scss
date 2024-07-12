@@ -8,21 +8,13 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 60px;
+  width: 80px;
 }
 
-.searchdiv {
-  width: 240px;
-  height: 40px;
-  border: 1px solid #afaeae;
-  border-radius: 25px;
-  background-color: whitesmoke;
-  color: lightgray;
-  text-align: center;
+.search_bar_container {
   display: flex;
-  align-items: center;
   justify-content: center;
-  text-decoration: none;
+  align-items: center;
 }
 
 .link-color {

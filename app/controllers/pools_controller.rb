@@ -4,10 +4,15 @@ class PoolsController < ApplicationController
 
   def index
     @pools = Pool.all
+    if params[:location].present? || params[:capacity].present?
+      @pools = @pools.search_by_address(params[:location]) if params[:location].present?
+      @pools = @pools.search_by_capacity(params[:capacity]) if params[:capacity].present?
+    end
   end
 
   def show
     @pool = Pool.find(params[:id])
+    @marker = [lat: @pool.latitude, lng: @pool.longitude]
   end
 
   def new
@@ -16,15 +21,17 @@ class PoolsController < ApplicationController
 
   def mypools
     @mypools = Pool.where(user_id: current_user)
+    @bookingrequests = Booking.includes(:pool).where(user_id: current_user, status: 'pending')
+    @allbookings = Booking.includes(:pool).where(user_id: current_user, status: 'accepted')
   end
 
   def create
     @pool = Pool.new(pool_params)
     @pool.user = current_user
     if @pool.save
-      redirect_to my_pools_path
+      redirect_to my_pools_path status: :see_other
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -46,7 +53,7 @@ class PoolsController < ApplicationController
     redirect_to my_pools_path, notice: 'Pool was successfully destroyed.'
   end
 
- private
+  private
 
   def set_pool
     @pool = Pool.find(params[:id])

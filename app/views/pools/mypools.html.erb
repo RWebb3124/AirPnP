@@ -1,11 +1,30 @@
 <div class="container custom-min-height">
+  <div class="d-flex justify-content-end">
+    <%= link_to "List a pool", new_pool_path, class: "btn btn-success" %>
+  </div>
+
+  <%# my booking requests section %>
+  <div class="row g-0 mb-5">
+    <h2>Booking requests</h2>
+    <% if @bookingrequests.empty? %>
+       <em class="text-muted">You don't have any pending booking requests!</em>
+    <% end %>
+    <%= render "shared/booking_card", bookings: @bookingrequests %>
+  </div>
+
+    <%# all bookings section %>
+  <div class="row g-0 mb-5">
+    <h2>All bookings</h2>
+    <% if @allbookings.empty? %>
+       <em class="text-muted">You don't have any accepted bookings!</em>
+    <% end %>
+    <%= render "shared/booking_card", bookings: @allbookings %>
+  </div>
+
+  <%# my pools section %>
   <div class="row g-0">
-    <div class="d-flex justify-content-between my-4">
-      <span class="mb-2 d-block"><small><em class="text-muted"><%= "You haven't created any pools!" if @mypools.empty? %></em></small></span>
-      <div>
-        <%= link_to "List a pool", new_pool_path, class: "btn btn-success" %>
-      </div>
-    </div>
+    <h2>My pools</h2>
+    <span class="mb-2 d-block"><small><em class="text-muted"><%= "You haven't created any pools!" if @mypools.empty? %></em></small></span>
     <% @mypools.each do |pool| %>
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card-pool">

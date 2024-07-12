@@ -20,6 +20,12 @@
 
 }
 
+.show-container #map {
+  display: flex;
+  border-radius: 20px;
+  margin-left: 60px;
+}
+
 .show-container .container-text {
   display: flex;
   width: 1000px;
@@ -40,4 +46,12 @@
   width: 1000px;
   align-items: left;
 
+}
+
+.star-blue {
+  color: #0011ff;
+}
+
+.review {
+  margin-bottom: 1rem;
 }

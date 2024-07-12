@@ -21,10 +21,16 @@ class BookingsController < ApplicationController
     @mybookings = @bookings.where(user_id: current_user)
   end
 
+  def update_status
+    @booking = Booking.find(params[:id])
+    @booking.update(status: params[:status])
+    redirect_to my_pools_path
+  end
+
   private
 
   def booking_params
-    params.require(:booking).permit(:start_time, :end_time, :user_id, :id)
+    params.require(:booking).permit(:start_time, :end_time, :user_id, :id, :status)
   end
 
   def find_pool
