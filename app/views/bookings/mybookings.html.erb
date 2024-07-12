@@ -5,9 +5,9 @@
     </div>
   <% @mybookings.each do |booking| %>
     <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-      <div class="card-booking">
+      <div class="card-booking-ryan">
         <img src="<%= cl_image_path booking.pool.photo.key, height: 300, crop: :fill unless booking.pool.photo.key.blank?%>" />
-        <div class="card-booking-infos">
+        <div class="card-booking-infos-ryan">
           <div class="booking-header-div p-3"><h2><%= booking.pool.title %></h2></div>
           <div class="view-starttime paddingable">
             <h6>Owned by: <strong><%= booking.pool.user.first_name %> <%= booking.pool.user.last_name %></strong></h6>

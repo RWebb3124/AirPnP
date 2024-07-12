@@ -1,4 +1,4 @@
-.card-booking {
+.card-booking-ryan {
   background: white;
   box-shadow: 0 0 10px rgba(154, 154, 154, 0.2);
   border-radius: 10px;
@@ -8,7 +8,7 @@
   flex-direction: column;
 }
 
-.card-booking > img {
+.card-booking-ryan > img {
   height: 200px;
   width: 100%;
   object-fit: cover;
@@ -26,13 +26,13 @@
   flex-grow: 1;
 }
 
-.card-booking h2 {
+.card-booking-ryan h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-booking p {
+.card-booking-ryan p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
@@ -45,11 +45,11 @@
   margin-top: auto;
 }
 
-.card-booking a {
+.card-booking-ryan a {
   text-decoration: none !important;
 }
 
-.card-booking {
+.card-booking-ryan {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 10px rgba(154, 154, 154, 0.2);
@@ -61,13 +61,13 @@
   flex-direction: column;
 }
 
-.card-booking > img {
+.card-booking-ryan > img {
   height: 200px;
   width: 100%;
   object-fit: cover;
 }
 
-.card-booking-infos {
+.card-booking-infos-ryan {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -79,13 +79,13 @@
   flex-grow: 1;
 }
 
-.card-booking h2 {
+.card-booking-ryan h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-booking p {
+.card-booking-ryan p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
