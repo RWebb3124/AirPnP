@@ -1,19 +1,21 @@
   <% bookings.each do |booking| %>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card-pool">
         <img src="<%= cl_image_path booking.pool.photo.key, height: 300, crop: :fill unless booking.pool.photo.key.blank?%>" />
         <div class="card-pool-infos">
           <div>
-            <h2><%= booking.user.first_name %><%= booking.user.last_name %></h2>
-            <p>Booked for: <%= booking.pool.title %> </p>
+            <h2><%= booking.user.first_name %> <%= booking.user.last_name %></h2>
+            <p>Booked for: <strong><%= booking.pool.title %> </strong></p>
             <p>Start time: <%= booking.start_time.strftime("%B %d, %Y %I:%M %p") %></p>
             <p>End time: <%= booking.end_time.strftime("%B %d, %Y %I:%M %p") %></p>
           </div>
-          <h2 class="card-pool-pricing">Bill: £<%= '%.2f' % ((booking.pool.price / 60) * ((booking.end_time - booking.start_time) / 60)).round(2) %></h2>
           <% if booking.status != "accepted" %>
-            <div class="d-flex">
-              <%= button_to "Accept", update_booking_status_path(booking, status: 'accepted'), class: "btn btn-success", method: :patch, data: {turbo: false} %>
-              <%= button_to "Reject", update_booking_status_path(booking, status: 'rejected'), class: "btn btn-danger", method: :patch, data: {turbo: false} %>
+            <div class="accept-reject-buttons">
+              <h2 class="card-pool-pricing">Bill: £<%= '%.2f' % ((booking.pool.price / 60) * ((booking.end_time - booking.start_time) / 60)).round(2) %></h2>
+              <div class="buttons-section">
+                <small><%= button_to "Accept", update_booking_status_path(booking, status: 'accepted'), class: "booking-card-accept", method: :patch, data: {turbo: false} %></small>
+                <small><%= button_to "Reject", update_booking_status_path(booking, status: 'rejected'), class: "booking-card-reject", method: :patch, data: {turbo: false} %></small>
+              </div>
             </div>
           <% end %>
         </div>

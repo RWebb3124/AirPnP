@@ -141,3 +141,34 @@
 .booking-header-div{
   background-color: rgb(214, 239, 244);
 }
+
+.booking-card-accept {
+  text-decoration: none;
+  border: none;
+  background: none;
+  color: rgb(36, 204, 142);
+  &:hover {
+    color: rgb(24, 167, 114);
+  }
+}
+
+.booking-card-reject {
+  text-decoration: none;
+  border: none;
+  background: none;
+  color: rgb(255, 81, 81);
+  &:hover {
+    color: rgb(171, 41, 41);
+  }
+}
+
+.accept-reject-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttons-section {
+  display: flex;
+  justify-content: end;
+}
