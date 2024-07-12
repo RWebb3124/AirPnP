@@ -1,12 +1,13 @@
 <div class="container py-5">
   <div class="row">
     <div class="col-12 col-md-6 offset-lg-3">
-      <div class="bg-white rounded p-3 shadow">
+      <div class="form mary rounded p-3 shadow">
+      <h2>Your Review</h2>
         <%= simple_form_for([@booking, @review]) do |f| %>
           <%= f.input :title, placeholder: "Give your review a title..." %>
           <%= f.input :content, placeholder: "Add your review here..." %>
           <%= f.input :rating, :collection => 0..5, required: true, prompt: "What's your rating?" %>
-          <%= f.button :submit %>
+          <%= f.button :submit, class: 'btn-form' %>
         <% end %>
       </div>
     </div>
