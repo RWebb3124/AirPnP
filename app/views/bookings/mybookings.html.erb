@@ -4,33 +4,34 @@
       <span class="mb-2 d-block"><small><em class="text-muted"><%= "You haven't created any bookings!" if @mybookings.empty? %></em></small></span>
     </div>
   <% @mybookings.each do |booking| %>
-    <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6">
       <div class="card-booking">
         <img src="https://housing.com/news/wp-content/uploads/2023/03/10-Vastu-based-swimming-pool-ideas-for-home-construction-09.png" />
         <div class="card-booking-infos">
-          <div class="bg-light p-3"><h2><%= booking.pool.title %></h2></div>
-          <div class="view-starttime">
-            <p>Owned by: <%= booking.pool.user.first_name %> <%= booking.pool.user.last_name %></p>
+          <div class="booking-header-div p-3"><h2><%= booking.pool.title %></h2></div>
+          <div class="view-starttime paddingable">
+            <h6>Owned by: <strong><%= booking.pool.user.first_name %> <%= booking.pool.user.last_name %></strong></h6>
             <div><p>Start time:</p>
             <p><%= booking.start_time.strftime("%B %d, %Y %I:%M %p") %></p></div>
           </div>
-          <div class="author-endtime">
-            <%= link_to "View pool", booking.pool, class: "btn btn-primary" %>
+          <div class="author-endtime paddingable">
+            <%= link_to "View pool", booking.pool, class: "booking-view-pool" %>
             <div><p>End time:</p>
             <p><%= booking.end_time.strftime("%B %d, %Y %I:%M %p") %></p></div>
           </div>
-          <div class="review-price border-top">
+          <div class="review-price border-top paddingable">
             <% review = Review.find_by(booking_id: booking.id) %>
             <% if review.present? %>
-              <div class="p-2"><h2> Your review of <%= booking.pool.title %> </h2>
-              <%= link_to "Edit", edit_review_path(review) %>
-              <%= link_to "Delete", review_path(review), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-              <p> <%= review.title %> </p> <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
-              <p> Rating: <%= review.rating %> </p>
-              <p> <%= review.content %> </p></div>
+              <div class="p-2"><h2> Your review of <%= booking.pool.title %>: </h2>
+              <h6> <%= review.title %> </h6>
+              <p> <%= review.content %> </p>
+              <p> Rating: <strong><%= review.rating %></strong> </p>
+              <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small> </div>
+              <%= link_to "Edit", edit_review_path(review), class: "booking-card-edit" %>
+              <%= link_to "Delete", review_path(review), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "booking-card-delete" %>
             <% else %>
               <% if booking.end_time < Time.current %>
-                <%= link_to "Write a Review", new_booking_review_path(booking), class: "btn btn-primary" %>
+                <%= link_to "Write a Review", new_booking_review_path(booking), class: "booking-view-pool" %>
               <% else %>
                 <p><em> You can write a review after the booking ends </em></p>
               <% end %>

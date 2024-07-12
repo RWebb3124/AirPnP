@@ -46,7 +46,6 @@
 }
 
 .card-booking a {
-  color: black;
   text-decoration: none !important;
 }
 
@@ -56,7 +55,7 @@
   box-shadow: 0 0 10px rgba(154, 154, 154, 0.2);
   border-radius: 10px;
   margin: 10px;
-  height: 450px;
+  height: 550px;
   color: black;
   display: flex;
   flex-direction: column;
@@ -73,7 +72,7 @@
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
-  padding: 16px;
+  padding: 0px;
 }
 
 .title-description {
@@ -99,18 +98,44 @@
   margin-top: auto;
 }
 
-.card-booking a {
-  color: white !important;
-  text-decoration: none !important;
-}
-
 .review-price, .author-endtime, .view-starttime {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.card-booking .card-pool-infos div {
+.paddingable {
   padding-left: 16px;
   padding-right: 16px;
+}
+
+.booking-card-edit {
+  padding: 2px 12px;
+  color: rgb(56, 203, 232);
+  border-radius: 2px;
+  &:hover {
+    color: rgb(35, 137, 158);
+  }
+}
+
+.booking-card-delete {
+  color: rgb(255, 81, 81);
+  &:hover {
+    color: rgb(171, 41, 41);
+  }
+}
+
+.booking-view-pool {
+  padding: 4px 15px;
+  background-color: rgb(214, 239, 244);
+  color: rgb(0, 123, 123);
+  border-radius: 2px;
+  box-shadow: 2px 2px 2px rgba(147, 147, 147, 0.3);
+  &:hover {
+    color: rgb(0, 71, 71);
+  }
+}
+
+.booking-header-div{
+  background-color: rgb(214, 239, 244);
 }
