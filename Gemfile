@@ -85,3 +85,5 @@ group :test do
 end
 
 gem "pg_search"
+gem 'dotenv-rails'
+gem 'cloudinary'

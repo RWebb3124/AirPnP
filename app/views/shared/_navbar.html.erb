@@ -15,6 +15,7 @@
               placeholder: "Location..",
               style: "width: 350px; border-radius: 10px; height: 40px; margin: 5px"
           %>
+          <div class="capacity-icon"><i class="fa-solid fa-users"></i></div>
         <%= text_field_tag :capacity,
               params[:capacity],
               class: "form-control form-control-sm",
@@ -48,7 +49,7 @@
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <%= link_to "Login", new_user_session_path, class: "btn nav-link" %>
           </li>
         <% end %>
       </ul>
