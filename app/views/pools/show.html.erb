@@ -3,7 +3,7 @@
     <div class="col">
     <h1><%= @pool.title %></h1>
       <div class=container-img>
-      <img src="https://housing.com/news/wp-content/uploads/2023/03/10-Vastu-based-swimming-pool-ideas-for-home-construction-09.png" />
+      <img src="<%= cl_image_path @pool.photo.key, height: 300, crop: :fill unless @pool.photo.key.blank?%>" />
       <div style="width: 300px; height: 300px;" id="map"
         data-controller="map"
         data-map-marker-value="<%= @marker.to_json %>"
