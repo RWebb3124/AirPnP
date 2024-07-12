@@ -25,7 +25,9 @@
               <div class="p-2"><h2> Your review of <%= booking.pool.title %>: </h2>
               <h6> <%= review.title %> </h6>
               <p> <%= review.content %> </p>
-              <p> Rating: <strong><%= review.rating %></strong> </p>
+              <p> Rating: <% review.rating.times do %>
+              <i class="fas fa-star star-blue"></i>
+            <% end %> </p>
               <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small> </div>
               <%= link_to "Edit", edit_review_path(review), class: "booking-card-edit" %>
               <%= link_to "Delete", review_path(review), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "booking-card-delete" %>
