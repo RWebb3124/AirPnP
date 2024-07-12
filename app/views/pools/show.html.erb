@@ -1,7 +1,7 @@
 <div class="container show-container">
   <div class="container-title">
     <h1><%= @pool.title %></h1>
-    <h3>Price per hour: <strong>€<%= @pool.price %></strong></h3>
+    <h3>Price per hour: <strong>£<%= '%.2f' % @pool.price %></strong></h3>
   </div>
   <div class=container-img>
     <img src="https://housing.com/news/wp-content/uploads/2023/03/10-Vastu-based-swimming-pool-ideas-for-home-construction-09.png" />
@@ -31,6 +31,15 @@
   </div>
 </div>
 
-<div class="container-review">
-  <%= render 'shared/review_card' %>
+  <div class="reviewheader">
+  <h4><strong>All reviews:</strong>
+  <% average_rating = @pool.reviews.average(:rating)&.round(2) || 0.0 %>
+  <% if average_rating > 0.0 %>
+    <i class="fas fa-star star-blue"></i><small><%= average_rating %></small>
+  <%end%>
+  </h4></div>
+
+  <div class="container-review">
+    <%= render 'shared/review_card' %>
+  </div>
 </div>

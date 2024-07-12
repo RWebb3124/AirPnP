@@ -1,9 +1,4 @@
 <% if @pool.reviews.present? %>
-  <h2>All reviews for <%= @pool.title %></h2>
-  <% average_rating = @pool.reviews.average(:rating)&.round(2) || 0.0 %>
-  <% if average_rating > 0.0 %>
-    <i class="fas fa-star star-blue"></i><%= average_rating %>
-  <%end%>
   <% @pool.reviews.each do |review| %>
     <div class="review-card">
       <div class="review-header">
