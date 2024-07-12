@@ -1,3 +1,36 @@
-<div class="container">
+<div class="container show-container">
+  <div class="container-title">
+    <h1><%= @pool.title %></h1>
+    <h3>Price per hour: <strong>€<%= @pool.price %></strong></h3>
+  </div>
+  <div class=container-img>
+    <img src="https://housing.com/news/wp-content/uploads/2023/03/10-Vastu-based-swimming-pool-ideas-for-home-construction-09.png" />
+    <div style="width: 600px; height: 400px;" id="map"
+      data-controller="map"
+      data-map-marker-value="<%= @marker.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+
+
+<div class="container-details">
+  <div class= card-text>
+    <div class="col">
+    <p><%= @pool.description %></p>
+    <p><strong><%= @pool.address %></strong></p>
+
+  </div>
+
+  <div class= "card-btn">
+    <div class="col">
+      <h6><strong>Capacity:</strong> <%= @pool.capacity %> people</h6>
+      <%= link_to "Book pool", new_pool_booking_path, class: "btn btn-success" %>
+      <%= link_to "Back to search", pools_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-review">
   <%= render 'shared/review_card' %>
 </div>
