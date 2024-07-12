@@ -3,7 +3,7 @@
     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
       <%= link_to pool_path(pool) do %>
         <div class="card-pool">
-          <img src="https://housing.com/news/wp-content/uploads/2023/03/10-Vastu-based-swimming-pool-ideas-for-home-construction-09.png" />
+          <img src="<%= cl_image_path pool.photo.key, height: 300, crop: :fill unless pool.photo.key.blank?%>" />
           <div class="card-pool-infos">
             <div class="title-description">
               <h2><%= pool.title %></h2>
@@ -11,7 +11,7 @@
             </div>
             <div class="price-capacity">
               <div class="capacity-icon"><i class="fa-solid fa-users"></i><h2 class="card-pool-capacity"><%= pool.capacity %></h2></div>
-              <h2 class="card-pool-pricing">£<%= pool.price %></h2>
+              <h2 class="card-pool-pricing">£<%= '%.2f' % pool.price %></h2>
             </div>
           </div>
         </div>

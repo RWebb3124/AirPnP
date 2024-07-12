@@ -23,6 +23,8 @@ gem "devise"
 
 gem 'faker'
 
+gem "cloudinary"
+
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 

@@ -31,25 +31,6 @@
   </div>
 </div>
 
-
 <div class="container-review">
-  <div class="col-12 col-sm-6">
-    <% if @pool.reviews.empty? %>
-      <small class="text-muted"><em>Be the first one to review this pool!</em></small>
-    <% end %>
-    <% if @pool.reviews.any?%>
-      <h3> All reviews for <%= @pool.title %> </h3>
-      <% @pool.reviews.each do |review| %>
-        <div class="review mb-3"> <h4><%= review.title %></h4>
-          <% review.rating.times do %>
-            <i class="fas fa-star star-blue"></i>
-          <% end %>
-            <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
-            <p class="mb-0"><%= review.content %></p>
-          </div>
-          <% end %>
-        <hr>
-      <% end %>
-    </div>
-  </div>
+  <%= render 'shared/review_card' %>
 </div>

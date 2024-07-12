@@ -9,7 +9,7 @@
             <p>Start time: <%= booking.start_time.strftime("%B %d, %Y %I:%M %p") %></p>
             <p>End time: <%= booking.end_time.strftime("%B %d, %Y %I:%M %p") %></p>
           </div>
-          <h2 class="card-pool-pricing">Price: £<%= booking.pool.price %></h2>
+          <h2 class="card-pool-pricing">Price: £<%= '%.2f' % booking.pool.price %></h2>
           <% if booking.status != "accepted" %>
             <div class="d-flex">
               <%= button_to "Accept", update_booking_status_path(booking, status: 'accepted'), class: "btn btn-success", method: :patch, data: {turbo: false} %>
