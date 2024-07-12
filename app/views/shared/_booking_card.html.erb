@@ -1,7 +1,7 @@
   <% bookings.each do |booking| %>
     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
       <div class="card-pool">
-        <img src="https://housing.com/news/wp-content/uploads/2023/03/10-Vastu-based-swimming-pool-ideas-for-home-construction-09.png" />
+        <img src="<%= cl_image_path booking.pool.photo.key, height: 300, crop: :fill unless booking.pool.photo.key.blank?%>" />
         <div class="card-pool-infos">
           <div>
             <h2><%= booking.user.first_name %><%= booking.user.last_name %></h2>
@@ -9,7 +9,7 @@
             <p>Start time: <%= booking.start_time.strftime("%B %d, %Y %I:%M %p") %></p>
             <p>End time: <%= booking.end_time.strftime("%B %d, %Y %I:%M %p") %></p>
           </div>
-          <h2 class="card-pool-pricing">Price: £<%= '%.2f' % booking.pool.price %></h2>
+          <h2 class="card-pool-pricing">Bill: £<%= '%.2f' % ((booking.pool.price / 60) * ((booking.end_time - booking.start_time) / 60)).round(2) %></h2>
           <% if booking.status != "accepted" %>
             <div class="d-flex">
               <%= button_to "Accept", update_booking_status_path(booking, status: 'accepted'), class: "btn btn-success", method: :patch, data: {turbo: false} %>

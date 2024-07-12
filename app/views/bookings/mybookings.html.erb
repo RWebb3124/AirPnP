@@ -6,7 +6,7 @@
   <% @mybookings.each do |booking| %>
     <div class="col-12 col-sm-12 col-md-6 col-lg-6">
       <div class="card-booking">
-        <img src="https://housing.com/news/wp-content/uploads/2023/03/10-Vastu-based-swimming-pool-ideas-for-home-construction-09.png" />
+        <img src="<%= cl_image_path booking.pool.photo.key, height: 300, crop: :fill unless booking.pool.photo.key.blank?%>" />
         <div class="card-booking-infos">
           <div class="booking-header-div p-3"><h2><%= booking.pool.title %></h2></div>
           <div class="view-starttime paddingable">

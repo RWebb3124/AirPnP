@@ -4,7 +4,7 @@
     <h3>Price per hour: <strong>€<%= @pool.price %></strong></h3>
   </div>
   <div class=container-img>
-    <img src="https://housing.com/news/wp-content/uploads/2023/03/10-Vastu-based-swimming-pool-ideas-for-home-construction-09.png" />
+    <img src="<%= cl_image_path @pool.photo.key, height: 300, crop: :fill unless @pool.photo.key.blank?%>" />
     <div style="width: 600px; height: 400px;" id="map"
       data-controller="map"
       data-map-marker-value="<%= @marker.to_json %>"
