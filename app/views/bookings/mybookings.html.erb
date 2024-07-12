@@ -38,7 +38,7 @@
                 <p><em> You can write a review after the booking ends </em></p>
               <% end %>
             <% end %>
-            <h2 class="card-pool-pricing p-3">Cost: £<%= ((booking.pool.price / 60) * ((booking.end_time - booking.start_time) / 60)).round(2) %></h2>
+            <h2 class="card-pool-pricing p-3">Cost: £<%= '%.2f' % ((booking.pool.price / 60) * ((booking.end_time - booking.start_time) / 60)).round(2) %></h2>
           </div>
         </div>
       </div>
