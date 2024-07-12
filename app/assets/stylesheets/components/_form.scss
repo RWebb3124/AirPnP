@@ -4,7 +4,7 @@
 
 .btn-form {
   padding: 4px 15px;
-  background-color: #bde4ed40;
+  background-color: hsla(191, 57%, 84%, 0.997);
   color: #005f5f;
   border-radius: 5px;
   border: 1px;
@@ -12,7 +12,7 @@
   transition: 0.2s ease;
   &:hover {
     color: rgb(0, 71, 71);
-    background-color: rgb(190, 217, 222);
+    background-color: rgb(159, 191, 196);
   }
 }
 
