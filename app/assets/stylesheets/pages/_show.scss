@@ -1,51 +1,61 @@
 .show-container {
+  max-width: 1000px;
+}
+
+.show-container .container-title {
   display: flex;
+  justify-content: space-between;
 
   h1 {
     font-weight: bold;
-    font-size: 50px;
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 20px;
   }
 }
 
 .show-container img {
   display: flex;
+  justify-content: space-between;
   border-radius: 30px;
+  height: 400px;
   width: 600px;
-  max-height: 100%;
 
 }
 .show-container .container-img {
   display: flex;
-  justify-content: left;
-
+  justify-content: space-between;
 }
 
 .show-container #map {
   display: flex;
   border-radius: 20px;
-  margin-left: 60px;
+  margin-left: 30px;
+  box-shadow: 0 5px 7px rgba(0,0,0,0.2);
 }
 
-.show-container .container-text {
-  display: flex;
-  width: 1000px;
-  align-items: left;
-  padding-top: 10px;
+.show-container .container-details {
+  padding-top: 20px;
 
-  h2 {
-    font-weight: bold;
-    padding-top: 20px;
 
+  .card-text {
+    display:flex;
+    justify-content:flex-start;
+    align-items:left;
   }
 
 
+  .card-btn {
+    display: flex;
+    flex-direction: column;
+  }
+
 }
 
-.show-container .container-btn {
-  display: flex;
-  width: 1000px;
-  align-items: left;
-
+.show-container .container-review {
+  padding-top: 20px
 }
 
 .star-blue {
@@ -54,4 +64,16 @@
 
 .review {
   margin-bottom: 1rem;
+}
+.show-container .btn {
+  padding: 4px 15px;
+  background-color: rgb(214, 239, 244);
+  color: rgb(0, 123, 123);
+  border-radius: 2px;
+  box-shadow: 2px 2px 2px rgba(147, 147, 147, 0.3);
+  transition: 0.2s ease;
+  &:hover {
+    color: rgb(0, 71, 71);
+    background-color: rgb(190, 217, 222);
+  }
 }
